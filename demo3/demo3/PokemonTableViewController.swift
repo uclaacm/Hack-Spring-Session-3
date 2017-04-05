@@ -1,5 +1,5 @@
 //
-//  PokemonTableTableViewController.swift
+//  PokemonTableViewController.swift
 //  demo3
 //
 //  Created by Shannon Phu on 4/2/17.
@@ -10,7 +10,7 @@
 
 import UIKit
 
-class PokemonTableTableViewController: UITableViewController {
+class PokemonTableViewController: UITableViewController {
     var pokemons: [Pokemon] = []
     
     override func viewDidLoad() {
