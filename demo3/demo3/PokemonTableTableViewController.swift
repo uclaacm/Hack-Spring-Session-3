@@ -93,7 +93,7 @@ class PokemonTableTableViewController: UITableViewController {
         cell.detailTextLabel?.text = self.pokemons[indexPath.row].type
         let imgURL = self.pokemons[indexPath.row].imageURL
         
-        // This placeholder image added later on 
+        // This placeholder image added later on to allow for smoother loading of actual image
         cell.imageView?.image = UIImage(named: "pokeball.png")
         
         // Error appears after adding this
