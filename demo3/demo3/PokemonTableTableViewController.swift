@@ -91,6 +91,28 @@ class PokemonTableTableViewController: UITableViewController {
         // Configure the cell...
         cell.textLabel?.text = self.pokemons[indexPath.row].name
         cell.detailTextLabel?.text = self.pokemons[indexPath.row].type
+        let imgURL = self.pokemons[indexPath.row].imageURL
+        
+        // This placeholder image added later on 
+        cell.imageView?.image = UIImage(named: "pokeball.png")
+        
+        // Error appears after adding this
+        // App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.
+        // Solution: http://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http
+        // Move to a background thread to do some long running work
+        DispatchQueue.global(qos: .background).async {
+            do {
+                let imgData = try Data(contentsOf: imgURL)
+                
+                // Bounce back to the main thread to update the UI
+                DispatchQueue.main.async {
+                    cell.imageView?.image = UIImage(data: imgData)
+                }
+            } catch {
+                print("Could not download image URL.")
+            }
+        }
+        
         return cell
     }
  

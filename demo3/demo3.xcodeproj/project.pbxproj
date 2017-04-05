@@ -305,6 +305,7 @@
 				FB2522A01E9200D100DCC770 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

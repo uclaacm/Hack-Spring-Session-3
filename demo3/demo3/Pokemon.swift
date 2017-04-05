@@ -10,13 +10,13 @@ import UIKit
 
 class Pokemon: NSObject {
     var name: String
-    var imageURL: NSURL
+    var imageURL: URL
     var type: String
     var weight: Double
     
     init(name: String, imageURL: String, type: String, weight: String) {
         self.name = name
-        self.imageURL = NSURL(string: imageURL)!
+        self.imageURL = URL(string: imageURL)!
         self.type = type
         let parsedWeight = weight.replacingOccurrences(of: " kg", with: "")
         let convertedWeight: Double = Double(parsedWeight)!
